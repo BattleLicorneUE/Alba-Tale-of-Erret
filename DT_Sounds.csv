@@ -1,0 +1,9 @@
+---,Sound Type,Sound,Attenuation
+0,"Combat","SoundCue'/Game/Sounds/Ambient/Forest_Loop.Forest_Loop'","SoundAttenuation'/Game/Sounds/FootSteps/ATT_Footstep.ATT_Footstep'"
+1,"Combat","SoundCue'/Game/Sounds/Pnjs/Discussion/CrowdTalk.CrowdTalk'","SoundAttenuation'/Game/Sounds/SFX/BombAttack/ATT_Bomb_Attack.ATT_Bomb_Attack'"
+2,"Combat","SoundCue'/Game/Sounds/Pnjs/Forgeron/Forgeron.Forgeron'","SoundAttenuation'/Game/Sounds/Mobs/Blob/ATT_Blob_Idle.ATT_Blob_Idle'"
+3,"Combat","SoundCue'/Game/Sounds/Ambient/Birds_Loop.Birds_Loop'","SoundAttenuation'/Game/Sounds/Ambient/ATT_Birds.ATT_Birds'"
+4,"Combat","SoundCue'/Game/Sounds/Music/Music_Battle_Loop.Music_Battle_Loop'","SoundAttenuation'/Game/Sounds/SFX/MeleeAttack/ATT_Melee_Attack.ATT_Melee_Attack'"
+5,"Combat","SoundCue'/Game/Sounds/Pnjs/Baillement.Baillement'","SoundAttenuation'/Game/Sounds/SFX/BombAttack/ATT_Bomb_Attack.ATT_Bomb_Attack'"
+6,"Ambiant","SoundCue'/Game/Sounds/Pnjs/Baillement.Baillement'","SoundAttenuation'/Game/Sounds/SFX/BombAttack/ATT_Bomb_Attack.ATT_Bomb_Attack'"
+
