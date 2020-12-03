@@ -23,6 +23,10 @@
 		{
 			"Name": "GizmoEdMode",
 			"Enabled": true
+		},
+		{
+			"Name": "MultiUserClient",
+			"Enabled": true
 		}
 	]
 }
