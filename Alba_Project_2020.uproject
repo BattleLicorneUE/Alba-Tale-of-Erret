@@ -100,6 +100,10 @@
 		{
 			"Name": "SubversionSourceControl",
 			"Enabled": false
+		},
+		{
+			"Name": "ShallowWater",
+			"Enabled": true
 		}
 	]
 }
