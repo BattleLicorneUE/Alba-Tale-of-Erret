@@ -1,0 +1,167 @@
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "DlgEventCustom.h"
+
+#include "DlgEvent.generated.h"
+
+class UDlgContext;
+
+UENUM(BlueprintType)
+enum class EDlgEventType : uint8
+{
+	// Calls OnDialogueEvent on the Attendee
+	Event						UMETA(DisplayName = "Event"),
+
+	// Calls ModifyIntValue on the Attendee
+	ModifyInt					UMETA(DisplayName = "Modify Dialogue Int Value"),
+
+	// Calls ModifyFloatValue on the Attendee
+	ModifyFloat					UMETA(DisplayName = "Modify Dialogue Float Value"),
+
+	// Calls ModifyBoolValue on the Attendee
+	ModifyBool					UMETA(DisplayName = "Modify Dialogue Bool Value"),
+
+	// Calls ModifyNameValue on the Attendee
+	ModifyName					UMETA(DisplayName = "Modify Dialogue Name Value"),
+
+	// Modifies the value from the Attendee Int Variable
+	ModifyClassIntVariable		UMETA(DisplayName = "Modify Class Int Variable"),
+
+	// Modifies the value from the Attendee Float Variable
+	ModifyClassFloatVariable	UMETA(DisplayName = "Modify Class Float Variable"),
+
+	// Modifies the value from the Attendee Bool Variable
+	ModifyClassBoolVariable		UMETA(DisplayName = "Modify Class Bool Variable"),
+
+	// Modifies the value from the Attendee Name Variable
+	ModifyClassNameVariable		UMETA(DisplayName = "Modify Class Name Variable"),
+
+	// User Defined Event, calls EnterEvent on the custom event object.
+	//
+	// 1. Create a new Blueprint derived from DlgEventCustom (or DlgEventCustomHideCategories)
+	// 2. Override EnterEvent
+	Custom						UMETA(DisplayName = "Custom Event")
+};
+
+
+// Events are executed via calling IDlgDialogAttendee methods on dialogue attendees
+// They must be handled in game side, can be used to modify game state based on dialogue
+USTRUCT(BlueprintType)
+struct DLGSYSTEM_API FDlgEvent
+{
+	GENERATED_USTRUCT_BODY()
+
+public:
+	//
+	// ICppStructOps Interface
+	//
+
+	bool operator==(const FDlgEvent& Other) const
+	{
+		return AttendeeName == Other.AttendeeName &&
+			EventName == Other.EventName &&
+			IntValue == Other.IntValue &&
+			FMath::IsNearlyEqual(FloatValue, Other.FloatValue, KINDA_SMALL_NUMBER) &&
+			bDelta == Other.bDelta &&
+			bValue == Other.bValue &&
+			EventType == Other.EventType &&
+			CustomEvent == Other.CustomEvent;
+	}
+
+	//
+	// Own methods
+	//
+
+	// Executes the event
+	// Attendee is expected to implement IDlgDialogAttendee interface
+	void Call(UDlgContext& Context, const FString& ContextString, UObject* Attendee) const;
+
+	FString GetCustomEventName() const
+	{
+		return CustomEvent ? CustomEvent->GetName() : TEXT("INVALID");
+	}
+
+	static FString EventTypeToString(EDlgEventType Type);
+
+	// Is this a Condition which has a Dialogue Value
+	// NOTE: without EDlgConditionType::EventCall, for that call HasAttendeeInterfaceValue
+	static bool HasDialogueValue(EDlgEventType Type)
+	{
+		return Type == EDlgEventType::ModifyBool
+            || Type == EDlgEventType::ModifyFloat
+            || Type == EDlgEventType::ModifyInt
+            || Type == EDlgEventType::ModifyName;
+	}
+
+	// Same as HasDialogueValue but also Has the Event
+	static bool HasAttendeeInterfaceValue(EDlgEventType Type)
+	{
+		return Type == EDlgEventType::Event || HasDialogueValue(Type);
+	}
+
+	// Is this a Condition which has a Class Variable
+	static bool HasClassVariable(EDlgEventType Type)
+	{
+		return Type == EDlgEventType::ModifyClassBoolVariable
+            || Type == EDlgEventType::ModifyClassFloatVariable
+            || Type == EDlgEventType::ModifyClassIntVariable
+            || Type == EDlgEventType::ModifyClassNameVariable;
+	}
+
+protected:
+	bool ValidateIsAttendeeValid(const UDlgContext& Context, const FString& ContextString, const UObject* Attendee) const;
+
+	// Is the attendee required?
+	bool MustHaveAttendee() const { return EventType != EDlgEventType::Custom; }
+
+public:
+	// Name of the attendee (speaker) the event is called on.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	FName AttendeeName;
+
+	// Type of the event, can be a simple event or a call to modify a bool/int/float variable
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	EDlgEventType EventType = EDlgEventType::Event;
+
+	// Name of the relevant variable or event
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	FName EventName;
+
+	// The value the attendee gets
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	int32 IntValue = 0;
+
+	// The value the attendee gets
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	float FloatValue = 0.f;
+
+	// The value the attendee gets
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	FName NameValue;
+
+	// Weather to add the value to the existing one, or simply override it
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	bool bDelta = false;
+
+	// The value the attendee gets
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|Event")
+	bool bValue = false;
+
+	// User Defined Event, calls EnterEvent on the custom event object.
+	//
+	// 1. Create a new Blueprint derived from DlgEventCustom (or DlgEventCustomHideCategories)
+	// 2. Override EnterEvent
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced, Category = "Dialogue|Event")
+	UDlgEventCustom* CustomEvent = nullptr;
+};
+
+template<>
+struct TStructOpsTypeTraits<FDlgEvent> : public TStructOpsTypeTraitsBase2<FDlgEvent>
+{
+	enum
+	{
+		WithIdenticalViaEquality = true
+    };
+};

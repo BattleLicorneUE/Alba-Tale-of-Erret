@@ -1,0 +1,47 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1",
+	"EngineVersion" : "4.26.0",
+	"FriendlyName": "ALBA Dlg System",
+	"Description": "Dialog system for Alba",
+	"Category": "Misc",
+	"CreatedBy": "Laurent Paret",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"Modules": [
+		{
+			"Name": "DlgSystem",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms":
+			[
+				"Win64",
+				"Win32",
+				"Linux",
+				"LinuxAArch64",
+				"Mac",
+				"Android",
+				"IOS",
+				"TVOS",
+				"XboxOne",
+				"Switch",
+				"PS4",
+				"HoloLens",
+				"Lumin"
+			]
+		},
+		{
+			"Name": "DlgSystemEditor",
+			"Type": "UncookedOnly",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": ["Win64", "Win32", "Linux", "Mac"]
+		}
+	]
+}
