@@ -109,6 +109,10 @@
 		{
 			"Name": "ShallowWater",
 			"Enabled": true
+		},
+		{
+			"Name": "GitSourceControl",
+			"Enabled": false
 		}
 	]
 }
