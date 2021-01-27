@@ -83,7 +83,7 @@ public:
 	TSet<int32> VisitedNodeIndices;
 
 	// Set of already visited node GUIDs
-	// This was added to fix Issue 30
+	// This was added to fix Issue 30 (https://gitlab.com/NotYetGames/DlgSystem/-/issues/30)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dialogue|History")
 	TSet<FGuid> VisitedNodeGUIDs;
 };

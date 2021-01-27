@@ -205,7 +205,7 @@ int32 UDlgExportTwineCommandlet::Main(const FString& Params)
 
 FString UDlgExportTwineCommandlet::CreateTwineStoryData(const FString& Name, const FGuid& DialogueGUID, int32 StartNodeIndex, const FString& PassagesData)
 {
-	static const FString Creator = TEXT("UE-AlbaDlgSystem");
+	static const FString Creator = TEXT("UE-NotYetDlgSystem");
 	static const FString CreatorVersion = TEXT("5.0"); // TODO
 	static constexpr int32 Zoom = 1;
 	static const FString Format = TEXT("Harlowe");

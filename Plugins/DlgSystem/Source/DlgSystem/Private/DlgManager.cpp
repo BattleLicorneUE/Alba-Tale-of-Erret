@@ -153,7 +153,7 @@ UDlgContext* UDlgManager::ResumeDialogueFromNodeIndex(
 	if (Context->StartWithContextFromNodeIndex(ContextMessage, Dialogue, AttendeeBinding, StartNodeIndex, History, bFireEnterEvents))
 	{
 		return Context;
-	}
+	} 
 
 	return nullptr;
 }
@@ -461,7 +461,7 @@ void UDlgManager::GetAllDialoguesSpeakerStates(TArray<FName>& OutArray)
 {
 	TSet<FName> UniqueNames;
 	for (const UDlgDialogue* Dialogue : GetAllDialoguesFromMemory())
-	{
+	{ 
 		Dialogue->GetAllSpeakerStates(UniqueNames);
 	}
 

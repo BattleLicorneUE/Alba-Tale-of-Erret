@@ -213,6 +213,15 @@ void FDialogueStyle::Initialize()
 	);
 
 	// Custom Icon sizes, original image is 128x64, we divide by 1.4
+// 	StyleSet->Set(
+// 		PROPERTY_NotYetLogoIcon,
+// 		new FSlateImageBrush(GetPluginContentPath("Icons/NotYet_128x_64x.png"), FVector2D{91.42f, 45.8f})
+// 	);
+// 	StyleSet->Set(
+// 		GetSmallProperty(PROPERTY_NotYetLogoIcon),
+// 		new FSlateImageBrush(GetPluginContentPath("Icons/NotYet_96x.png"), Icon16x16)
+// 	);
+
 	StyleSet->Set(
 		PROPERTY_ConditionIcon,
 		new FSlateImageBrush(GetPluginContentPath("Icons/Condition_96x.png"), Icon96x96)

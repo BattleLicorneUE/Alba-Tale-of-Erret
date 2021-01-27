@@ -38,7 +38,7 @@ void FDlgLocalizationHelper::UpdateTextFromRemapping(const UDlgSystemSettings& S
 void FDlgLocalizationHelper::UpdateTextNamespaceAndKey(const UObject* Object, const UDlgSystemSettings& Settings, FText& Text)
 {
 	static const FString DefaultValue = TEXT("");
-
+	 
 	// See if we can edit this
 	if (!IsValid(Object))
 	{
@@ -98,7 +98,7 @@ bool FDlgLocalizationHelper::GetNewNamespaceAndKey(
 	else if (Settings.DialogueTextNamespaceLocalization == EDlgTextNamespaceLocalization::WithPrefixPerDialogue)
 	{
 		NewNamespace = Settings.DialogueTextPrefixNamespaceName + Object->GetName();
-	}
+	} 
 
 	// Did namespace change?
 	// Only apply the change if the new namespace/package is different - we want to keep the keys stable where possible
