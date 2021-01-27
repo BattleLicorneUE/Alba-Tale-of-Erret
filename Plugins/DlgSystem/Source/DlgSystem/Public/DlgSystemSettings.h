@@ -310,12 +310,12 @@ public:
 	// Depending on TextLocalizationMode it can be used as the namespace for all dialogue
 	// Only used for GlobalNamespace
 	UPROPERTY(Category = "Localization", Config, EditAnywhere, DisplayName = "Text Global Namespace Name")
-	FString DialogueTextGlobalNamespaceName = "Dialogue";
+	FString DialogueTextGlobalNamespaceName = "Dialog";
 
 	// Depending on TextLocalizationMode it can be used as the prefix for all dialogues namespace name
 	// Only used for WithPrefixPerDialogue
 	UPROPERTY(Category = "Localization", Config, EditAnywhere, DisplayName = "Text Namespace Name Prefix")
-	FString DialogueTextPrefixNamespaceName = "Dialogue_";
+	FString DialogueTextPrefixNamespaceName = "Dialog_";
 
 	// Additional Array of texts that this system won't overwrite the namespace or key for
 	//UPROPERTY(Category = "Localization", Config, EditAnywhere, DisplayName = "Ignored Texts")
