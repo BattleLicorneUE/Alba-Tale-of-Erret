@@ -130,7 +130,7 @@ bool UDlgSystemSettings::IsIgnoredTextForLocalization(const FText& Text) const
 	// 	if (TextSourceString.Equals(Ignored))
 	// 	{
 	// 		return false;
-	// 	}
+	// 	} 
 	// }
 
 	return true;
