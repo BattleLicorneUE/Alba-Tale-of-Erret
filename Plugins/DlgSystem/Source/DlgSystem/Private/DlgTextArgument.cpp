@@ -18,7 +18,7 @@ FFormatArgumentValue FDlgTextArgument::ConstructFormatArgumentValue(const UDlgCo
 	if (Attendee == nullptr)
 	{
 		FDlgLogger::Get().Errorf(
-			TEXT("FAILED to construct text argument because the PARTICIPANT is INVALID (Supplied Attendee = %s). \nContext:\n\t%s, DisplayString = %s, AttendeeName = %s, ArgumentType = %s"),
+			TEXT("FAILED to construct text argument because the ATTENDEE is INVALID (Supplied Attendee = %s). \nContext:\n\t%s, DisplayString = %s, AttendeeName = %s, ArgumentType = %s"),
 			*ValidAttendeeName.ToString(), *Context.GetContextString(), *DisplayString, *AttendeeName.ToString(), *ArgumentTypeToString(Type)
 		);
 		return FFormatArgumentValue(FText::FromString(TEXT("[CustomTextArgument is INVALID. Missing Attendee. Check log]")));
