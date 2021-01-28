@@ -84,14 +84,14 @@ bool FDlgEvent::ValidateIsAttendeeValid(const UDlgContext& Context, const FStrin
 	if (MustHaveAttendee())
 	{
 		FDlgLogger::Get().Errorf(
-			TEXT("%s - Event FAILED because the PARTICIPANT is INVALID. \nContext:\n\t%s, \n\tAttendeeName = %s, EventType = %s, EventName = %s, CustomEvent = %s"),
+			TEXT("%s - Event FAILED because the ATTENDEE is INVALID. \nContext:\n\t%s, \n\tAttendeeName = %s, EventType = %s, EventName = %s, CustomEvent = %s"),
 			*ContextString, *Context.GetContextString(), *AttendeeName.ToString(), *EventTypeToString(EventType), *EventName.ToString(), *GetCustomEventName()
 		);
 	}
 	else
 	{
 		FDlgLogger::Get().Warningf(
-			TEXT("%s - Event WARNING because the PARTICIPANT is INVALID. The call will NOT FAIL, but the attendee is not present. \nContext:\n\t%s, \n\tAttendeeName = %s, EventType = %s, EventName = %s, CustomEvent = %s"),
+			TEXT("%s - Event WARNING because the ATTENDEE is INVALID. The call will NOT FAIL, but the attendee is not present. \nContext:\n\t%s, \n\tAttendeeName = %s, EventType = %s, EventName = %s, CustomEvent = %s"),
 			*ContextString, *Context.GetContextString(), *AttendeeName.ToString(), *EventTypeToString(EventType), *EventName.ToString(), *GetCustomEventName()
 		);
 	}

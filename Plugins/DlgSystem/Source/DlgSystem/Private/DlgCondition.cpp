@@ -276,7 +276,7 @@ bool FDlgCondition::ValidateIsAttendeeValid(const UDlgContext& Context, const FS
 	}
 
 	FDlgLogger::Get().Errorf(
-		TEXT("%s FAILED because the PARTICIPANT is INVALID.\nContext:\n\t%s, ConditionType = %s"),
+		TEXT("%s FAILED because the ATTENDEE is INVALID.\nContext:\n\t%s, ConditionType = %s"),
 		*ContextString, *Context.GetContextString(), *ConditionTypeToString(ConditionType)
 	);
 	return false;
