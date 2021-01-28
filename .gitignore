@@ -76,3 +76,14 @@ Plugins/DlgSystem/Source/DlgSystem/Public/DlgSystemSettings.h
 Plugins/DlgSystem/Source/DlgSystemEditor/Private/DialogueEditor/DialogueEditor.cpp
 Plugins/DlgSystem/Source/DlgSystemEditor/Private/DialogueStyle.h
 Plugins/DlgSystem/Source/DlgSystemEditor/Private/DlgSystemEditorModule.cpp
+Plugins/DlgSystem/Content/Icons/LICENSE.txt
+Plugins/DlgSystem/Content/Icons/NotYet_128x_64x.png
+Plugins/DlgSystem/Content/Icons/NotYet_96x.png
+Plugins/DlgSystem/Source/DlgSystem/Private/DlgLocalizationHelper.cpp
+Plugins/DlgSystem/Source/DlgSystem/Private/DlgManager.cpp
+Plugins/DlgSystem/Source/DlgSystem/Private/DlgSystemSettings.cpp
+Plugins/DlgSystem/Source/DlgSystem/Public/DlgMemory.h
+Plugins/DlgSystem/Source/DlgSystem/Public/DlgSystemSettings.h
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/Commandlets/DlgExportTwineCommandlet.cpp
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/DialogueStyle.cpp
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/DlgSystemEditorModule.cpp
