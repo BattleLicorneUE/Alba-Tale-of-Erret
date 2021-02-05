@@ -90,3 +90,8 @@ Plugins/DlgSystem/Source/DlgSystemEditor/Private/DlgSystemEditorModule.cpp
 Plugins/DlgSystem/Source/DlgSystem/Private/DlgCondition.cpp
 Plugins/DlgSystem/Source/DlgSystem/Private/DlgEvent.cpp
 Plugins/DlgSystem/Source/DlgSystem/Private/DlgTextArgument.cpp
+Plugins/DlgSystem/Source/DlgSystem/Public/DlgSystemSettings.h
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/DlgSystemEditorModule.cpp
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/DialogueStyle.h
+Plugins/DlgSystem/Source/DlgSystemEditor/Private/DialogueEditor/DialogueEditor.cpp
+Plugins/DlgSystem/Source/DlgSystem/Public/DlgSystemSettings.h
