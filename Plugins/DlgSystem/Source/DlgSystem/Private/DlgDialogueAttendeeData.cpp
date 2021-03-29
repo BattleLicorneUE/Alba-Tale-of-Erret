@@ -31,7 +31,7 @@ void FDlgAttendeeData::AddConditionPrimaryData(const FDlgCondition& Condition)
 		case EDlgConditionType::NameCall:
 			NameVariableNames.Add(ConditionName);
 			break;
-
+			
 		case EDlgConditionType::ClassIntVariable:
 			ClassIntVariableNames.Add(ConditionName);
 			break;
