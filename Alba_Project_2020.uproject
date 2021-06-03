@@ -26,7 +26,7 @@
 		},
 		{
 			"Name": "MultiUserClient",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "SteamVR",
@@ -116,8 +116,17 @@
 		},
 		{
 			"Name": "AsyncLoadingScreen",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/01f39767dc6b4290877f38365787cbf8"
+		},
+		{
+			"Name": "FMODStudio",
+			"Enabled": false
+		},
+		{
+			"Name": "VictoryBPLibrary",
+			"Enabled": false,
+			"MarketplaceURL": "http://www.ue4code.com"
 		}
 	]
 }
